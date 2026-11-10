@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WATHBAH AI — Cinematic Intro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#050918;--panel:#0d1830;--line:#25365d;--blue:#3975ff;--cyan:#36d8ee;--violet:#9275ff;--white:#f5f7ff;--muted:#9baaca}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030611;color:var(--white);font-family:Inter,"IBM Plex Sans Arabic",sans-serif}
+body{display:grid;place-items:center}
+#stage{position:relative;width:min(100vw,177.78vh);height:min(100vh,56.25vw);overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#14244a 0%,#071024 54%,#040817 100%);font-size:clamp(7px,min(1vw,1.78vh),16px)}
+.sc{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .65s ease}.sc.on{opacity:1;visibility:visible}
+.a{opacity:0}.on .a{animation:rise .55s var(--d,0s) both}
+@keyframes rise{from{opacity:0;transform:translateY(1.1em) scale(.98)}to{opacity:1;transform:none}}
+.top{position:absolute;z-index:20;top:3.5%;inset-inline:4%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;letter-spacing:.14em;font-size:1.2em}.logo span{color:var(--cyan)}
+.langs{display:flex;gap:.45em;padding:.25em;border:1px solid #ffffff22;border-radius:2em;background:#081329cc}
+.langs button{border:0;background:transparent;color:#aebbd6;border-radius:2em;padding:.45em .9em;font:600 1em inherit;cursor:pointer}.langs button.active{background:#e8eaff;color:#111a36}
+.kicker{position:absolute;top:18%;inset-inline:6%;font-size:1em;letter-spacing:.16em;color:var(--cyan);font-weight:600}
+.headline{position:absolute;top:27%;inset-inline:6%;max-width:75%;font-size:clamp(2.2em,5.2vw,5.4em);font-weight:600;line-height:1.18;letter-spacing:-.04em}
+[dir=rtl] .headline{letter-spacing:0;line-height:1.35}
+.headline em{font-style:normal;color:var(--cyan)}
+.sub{position:absolute;top:57%;inset-inline:6%;max-width:54%;font-size:1.45em;line-height:1.8;color:#b8c5df}
+.windows{position:absolute;inset-inline-end:7%;top:25%;width:34%;height:48%;display:flex;gap:3%;transform:perspective(900px) rotateY(-13deg)}
+.win{flex:1;border:1px solid #344875;border-radius:1em;background:linear-gradient(145deg,#142343,#0a142b);padding:8%;box-shadow:0 1em 3em #0006}
+.line{height:.55em;background:#344b78;border-radius:1em;margin:.8em 0}.red{background:#ff777e}
+.orbit{position:absolute;top:22%;inset-inline-end:12%;width:30%;aspect-ratio:1;border:1px solid #37d8ee55;border-radius:50%;box-shadow:0 0 5em #276bff35}
+.profile,.agent,.metric{position:absolute;background:linear-gradient(145deg,#132342,#0b152b);border:1px solid #344a76;border-radius:1em;padding:1.4em;box-shadow:0 1em 3em #0005;line-height:1.8}
+.profile{top:24%;inset-inline-start:7%;width:30%;font-size:1.2em}.chips{position:absolute;top:65%;inset-inline-start:8%;display:flex;gap:.7em;flex-wrap:wrap;width:38%}.chip{border:1px solid #2d527f;background:#10203c;padding:.5em 1em;border-radius:2em;color:#c8d8f7;font-size:1em}
+.recs{position:absolute;top:25%;inset-inline:5%;display:grid;grid-template-columns:repeat(3,1fr);gap:2%}
+.rec{padding:1.5em;border:1px solid #304574;border-radius:1em;background:linear-gradient(145deg,#142342,#0a142a);min-height:17em}
+.rec strong{display:block;font-size:1.5em;margin:1.2em 0 .5em}.rec small{color:#a9badb;font-size:1.05em}.symbol{width:3em;height:3em;border-radius:.8em;background:linear-gradient(135deg,var(--blue),var(--violet))}
+.caption{position:absolute;bottom:10%;inset-inline:6%;font-size:2.1em;line-height:1.5;font-weight:500}.caption b{color:var(--cyan)}
+.agent{width:25%;font-size:1.1em}.agent.master{top:31%;left:37%;width:26%;text-align:center;border-color:var(--violet)}.agent.one{top:23%;inset-inline-start:6%}.agent.two{top:48%;inset-inline-end:6%}
+.pill{display:inline-block;border-radius:2em;background:#36d8ee20;color:var(--cyan);padding:.2em .8em;margin-top:.6em;font-size:.9em}
+.dash{position:absolute;inset:19% 6% 14%;display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;gap:2%}
+.metric{position:relative;padding:1.5em}.metric.chart{grid-row:span 2}.metric .big{font-size:3.2em;font-weight:700;color:#142e61}.metric .label{color:#64769c;font-size:1em}
+.bars{height:60%;display:flex;align-items:end;gap:4%;padding:1em 0}.bars i{flex:1;background:linear-gradient(var(--cyan),var(--blue));border-radius:.4em .4em 0 0}
+.brand-reveal{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.glow{position:absolute;width:35em;height:35em;border-radius:50%;background:radial-gradient(circle,#2869ff55,transparent 68%);left:50%;top:50%;transform:translate(-50%,-50%);animation:pulse 3s infinite}
+@keyframes pulse{50%{scale:1.2;opacity:.65}}
+.brand-en{font-size:6em;font-weight:700;letter-spacing:.08em;position:relative}.brand-ar{font-size:4em;color:var(--cyan);position:relative;margin-top:.2em}.tagline{font-size:1.5em;color:#bdc9e0;position:relative;margin-top:1.2em}
+#controls{position:absolute;z-index:30;bottom:3%;inset-inline:4%;display:flex;align-items:center;gap:1em}
+#skip{border:1px solid #ffffff35;border-radius:2em;padding:.65em 1.25em;background:#18294d;color:white;font:600 1em inherit;cursor:pointer}
+#progress{height:4px;flex:1;border-radius:5px;background:#ffffff2a;overflow:hidden}#progress i{display:block;width:0;height:100%;background:var(--cyan)}
+#time{font-size:1em;color:#aebbd6;min-width:3em;text-align:center}
+@media(max-aspect-ratio:4/5){#stage{width:100vw;height:100vh;font-size:clamp(8px,1.35vw,13px)}.headline{top:25%;max-width:90%;font-size:3.8em}.sub{top:48%;max-width:85%;font-size:1.35em}.windows{top:63%;inset-inline:12%;width:76%;height:23%}.profile{top:24%;width:42%}.orbit{top:26%;inset-inline-end:5%;width:38%}.recs{top:25%;grid-template-columns:1fr;inset-inline:8%;gap:2%;}.rec{min-height:0;padding:.7em;display:flex;align-items:center;gap:1em}.rec strong{margin:0;font-size:1.2em}.rec .symbol{width:2em;height:2em;flex:none}.rec small{font-size:.85em}.agent{width:39%;font-size:1em}.agent.master{left:30%;width:40%}.agent.two{top:52%}.caption{font-size:1.6em}.dash{inset:25% 5% 15%}.metric{padding:1em}.brand-en{font-size:4.5em}.brand-ar{font-size:3em}}
+@media(prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.glow{animation:none}}
+</style>
+</head>
+<body>
+<div id="stage">
+ <div class="top"><div class="logo">WATHBAH <span>AI</span></div><div class="langs"><button id="arBtn" class="active">العربية</button><button id="enBtn">English</button></div></div>
+ <section class="sc" data-s="0" data-e="5">
+  <div class="kicker a" data-ar="تحديات كثيرة. وقت محدود." data-en="TOO MANY TASKS. TOO LITTLE TIME.">تحديات كثيرة. وقت محدود.</div>
+  <div class="headline a"><span data-ar="مشروعك يستحق" data-en="Your business deserves">مشروعك يستحق</span><br><em data-ar="تقنية أذكى." data-en="smarter technology.">تقنية أذكى.</em></div>
+  <div class="sub a" data-ar="مبيعات، عملاء، تسويق، ومصاريف... كيف تختار الأدوات المناسبة دون أن تتجاوز ميزانيتك؟" data-en="Sales, customers, marketing, expenses. How do you choose the right tools without overspending?">مبيعات، عملاء، تسويق، ومصاريف... كيف تختار الأدوات المناسبة دون أن تتجاوز ميزانيتك؟</div>
+  <div class="windows a"><div class="win"><div class="line" style="width:80%"></div><div class="line" style="width:55%"></div><div class="line" style="width:72%"></div><div class="line red" style="width:35%"></div></div><div class="win"><div class="line" style="width:60%"></div><div class="line" style="width:90%"></div><div class="line red" style="width:45%"></div><div class="line" style="width:70%"></div></div><div class="win"><div class="line" style="width:75%"></div><div class="line red" style="width:35%"></div><div class="line" style="width:65%"></div></div></div>
+ </section>
+ <section class="sc" data-s="5" data-e="10">
+  <div class="kicker a" data-ar="أولًا: نفهم نشاطك" data-en="FIRST, WE UNDERSTAND YOUR BUSINESS">أولًا: نفهم نشاطك</div>
+  <div class="profile a"><b data-ar="ملف المنشأة" data-en="Business profile">ملف المنشأة</b><br><span data-ar="المجال: متجر إلكتروني" data-en="Industry: Online retail">المجال: متجر إلكتروني</span><br><span data-ar="الفريق: 6 أشخاص" data-en="Team: 6 people">الفريق: 6 أشخاص</span><br><span data-ar="الهدف: نمو المبيعات" data-en="Goal: Grow sales">الهدف: نمو المبيعات</span><br><span data-ar="الميزانية: 2,000 ريال" data-en="Budget: SAR 2,000">الميزانية: 2,000 ريال</span></div>
+  <div class="orbit a"></div><div class="chips a"><span class="chip">Sales</span><span class="chip">Customers</span><span class="chip">Budget</span></div>
+  <div class="caption a"><span data-ar="وَثبة تبدأ من احتياجك،" data-en="Wathbah starts with your needs,">وَثبة تبدأ من احتياجك،</span><br><b data-ar="وليس من أسماء الأدوات." data-en="not a list of tools.">وليس من أسماء الأدوات.</b></div>
+ </section>
+ <section class="sc" data-s="10" data-e="15">
+  <div class="kicker a" data-ar="توصيات تناسبك" data-en="RECOMMENDATIONS THAT FIT">توصيات تناسبك</div>
+  <div class="recs a"><div class="rec"><div class="symbol"></div><div><strong data-ar="تحليل المبيعات" data-en="Sales analytics">تحليل المبيعات</strong><small>Fit 92% · SAR 180</small></div></div><div class="rec"><div class="symbol"></div><div><strong data-ar="أتمتة التسويق" data-en="Marketing automation">أتمتة التسويق</strong><small>Fit 88% · SAR 320</small></div></div><div class="rec"><div class="symbol"></div><div><strong data-ar="مجموعة أعمال شاملة" data-en="All-in-one suite">مجموعة أعمال شاملة</strong><small data-ar="ملاءمة أقل — لا نوصي بها" data-en="Lower fit — not recommended">ملاءمة أقل — لا نوصي بها</small></div></div></div>
+  <div class="caption a"><b data-ar="الأداة المناسبة، لا الأدوات الأكثر." data-en="The right tools. Not more tools.">الأداة المناسبة، لا الأدوات الأكثر.</b></div>
+ </section>
+ <section class="sc" data-s="15" data-e="21">
+  <div class="kicker a" data-ar="من التوصية إلى خطة عمل" data-en="FROM RECOMMENDATION TO ACTION">من التوصية إلى خطة عمل</div>
+  <div class="agent one a"><b data-ar="وكيل التسويق" data-en="Marketing agent">وكيل التسويق</b><br><span data-ar="صياغة حملة" data-en="Draft campaign">صياغة حملة</span><br><span data-ar="بانتظار موافقتك" data-en="Awaiting approval">بانتظار موافقتك</span><br><span class="pill" data-ar="مراجعة" data-en="Review">مراجعة</span></div>
+  <div class="agent master a"><b data-ar="الوكيل الرئيسي" data-en="Master Agent">الوكيل الرئيسي</b><br><span data-ar="ينسق خطوات التنفيذ" data-en="Coordinates the plan">ينسق خطوات التنفيذ</span><br><span class="pill" data-ar="خطة من 5 خطوات" data-en="5-step plan">خطة من 5 خطوات</span></div>
+  <div class="agent two a"><b data-ar="وكيل تحليل المبيعات" data-en="Sales analytics agent">وكيل تحليل المبيعات</b><br><span data-ar="تجهيز لوحة المؤشرات" data-en="Prepare dashboard">تجهيز لوحة المؤشرات</span><br><span class="pill" data-ar="بموافقتك" data-en="With your approval">بموافقتك</span></div>
+  <div class="caption a"><b data-ar="وكلاء متخصصون يساعدونك،" data-en="Specialist agents help you,">وكلاء متخصصون يساعدونك،</b><br><span data-ar="وأنت توافق على كل خطوة." data-en="you approve every step.">وأنت توافق على كل خطوة.</span></div>
+ </section>
+ <section class="sc" data-s="21" data-e="26">
+  <div class="kicker a" data-ar="راقب الأداء وطوّر" data-en="MEASURE. LEARN. IMPROVE.">راقب الأداء وطوّر</div>
+  <div class="dash a"><div class="metric chart"><div class="label" data-ar="الإيرادات · بيانات تجريبية" data-en="Revenue · sample data">الإيرادات · بيانات تجريبية</div><div class="bars"><i style="height:28%"></i><i style="height:40%"></i><i style="height:36%"></i><i style="height:58%"></i><i style="height:53%"></i><i style="height:74%"></i><i style="height:90%"></i></div></div><div class="metric"><div class="label" data-ar="الطلبات" data-en="Orders">الطلبات</div><div class="big">+24%</div></div><div class="metric"><div class="label" data-ar="العملاء العائدون" data-en="Repeat customers">العملاء العائدون</div><div class="big">38%</div></div></div>
+  <div class="caption a"><b data-ar="رؤية أوضح لقرارات أفضل." data-en="Clearer insight. Better decisions.">رؤية أوضح لقرارات أفضل.</b></div>
+ </section>
+ <section class="sc" data-s="26" data-e="30">
+  <div class="brand-reveal"><div class="glow"></div><div class="brand-en a">WATHBAH AI</div><div class="brand-ar a">وَثبة AI</div><div class="tagline a" data-ar="التقنية المناسبة، لمشروع يستحق الأفضل." data-en="The right technology for a business built to grow.">التقنية المناسبة، لمشروع يستحق الأفضل.</div></div>
+ </section>
+ <div id="controls"><button id="skip" data-ar="تخطي المقدمة" data-en="Skip intro">تخطي المقدمة</button><div id="progress"><i></i></div><div id="time">0:00</div></div>
+</div>
+<script>
+const D=30, stage=document.getElementById('stage'), scenes=[...document.querySelectorAll('.sc')], progress=document.querySelector('#progress i'), time=document.getElementById('time'), skip=document.getElementById('skip');
+let startAt=0, frame=0, language='ar';
+function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.getElementById('arBtn').classList.toggle('active',lang==='ar');document.getElementById('enBtn').classList.toggle('active',lang==='en');document.querySelectorAll('[data-ar][data-en]').forEach(el=>el.textContent=el.dataset[lang]);}
+document.getElementById('arBtn').onclick=()=>setLanguage('ar');document.getElementById('enBtn').onclick=()=>setLanguage('en');
+function tick(now){const t=(now-startAt)/1000;scenes.forEach(s=>{const active=t>=+s.dataset.s&&t<+s.dataset.e;if(active!==s.classList.contains('on'))s.classList.toggle('on',active)});progress.style.width=Math.min(t/D*100,100)+'%';const sec=Math.min(Math.floor(t),D);time.textContent='0:'+String(sec).padStart(2,'0');if(t<D)frame=requestAnimationFrame(tick);else{time.textContent='0:30';}}
+function play(){cancelAnimationFrame(frame);scenes.forEach(s=>s.classList.remove('on'));requestAnimationFrame(n=>{startAt=n;frame=requestAnimationFrame(tick)});}
+skip.onclick=()=>{window.parent.postMessage({type:'WATHBAH_INTRO_DONE'},'*');};
+setLanguage('ar');play();
+</script>
+</body></html>
